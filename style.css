@@ -1,0 +1,129 @@
+/* Fond sombre luxueux */
+body {
+  background: linear-gradient(to bottom, #111, #1a1a1a);
+  color: #fff;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  width: 95%;
+  max-width: 900px;
+  margin: auto;
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+/* Titre */
+h1 {
+  text-align: center;
+  color: gold;
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+.address {
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Galerie */
+.photos img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photos img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Boutons */
+.buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.button {
+  background-color: gold;
+  color: #111;
+  padding: 14px 26px;
+  margin: 6px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #ffd700;
+  text-transform: uppercase;
+}
+.button:hover {
+  box-shadow: 0 0 20px #ffd700;
+  transform: translateY(-3px);
+}
+
+/* Accordéon sections */
+.brand-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.6s ease;
+  margin-top: 10px;
+  padding: 0 0;
+}
+.brand-section h2 {
+  color: gold;
+  border-bottom: 1px solid gold;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Tables luxueuses */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  transition: background 0.3s;
+}
+th {
+  background-color: #333;
+  color: gold;
+}
+tr:hover td {
+  background-color: #444;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+  .button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  table th, table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
