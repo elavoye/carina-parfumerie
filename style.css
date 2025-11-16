@@ -18,6 +18,87 @@ body {
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
 }
 
+.titre-noel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.snow-left,
+.snow-right {
+  width: 40px;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.snow-left::before,
+.snow-right::before {
+  content: "❄";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  color: gold;
+  opacity: 0.9;
+  animation: snowFall 2.8s linear infinite;
+}
+
+.snow-left::after,
+.snow-right::after {
+  content: "❄";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #ffd700;
+  opacity: 0.7;
+  animation: snowFall 3.6s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes snowFall {
+  0% { top: -20px; opacity: 0.3; }
+  20% { opacity: 1; }
+  100% { top: 120px; opacity: 0; }
+}
+
+/* Animation scintillante */
+@keyframes scintille {
+  0% { text-shadow: 0 0 5px gold; }
+  50% { text-shadow: 0 0 15px gold; }
+  100% { text-shadow: 0 0 5px gold; }
+}
+
+/* Animation douce d'apparition */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.titre-avec-noel span {
+  display: inline-block;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Ligne 1 : Tarif Noël 2025 (scintille doucement) */
+.noel-line1 {
+  font-size: 24px;
+  color: gold;
+  animation: fadeUp 1.2s ease forwards, scintille 2s infinite ease-in-out;
+  margin-top: 5px;
+}
+
+/* Ligne 2 : Jusqu’à 30% de réduction */
+.noel-line2 {
+  font-size: 20px;
+  color: #ffd700;
+  opacity: 0;
+  animation: fadeUp 1.8s ease forwards;
+}
+
 /* Titre */
 h1 {
   text-align: center;
@@ -34,11 +115,28 @@ h1 {
   margin-bottom: 30px;
 }
 
+.commande-info {
+  color: #ffd700;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+}
+
+.commande-info .icon {
+  color: gold;
+  font-size: 18px;
+  margin-right: 6px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
 /* Galerie */
+
 .photos img {
-  width: 100%;
+  width: 60%;         /* Réduction à 40% */
+  display: block;     /* Permet de centrer */
+  margin: 0 auto 20px auto; /* Centre l'image + marge bas */
   border-radius: 12px;
-  margin-bottom: 20px;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
